@@ -217,5 +217,6 @@ as well as doing a bit of arithmetic when you're making the header to get it ful
 ## Download PDF
 You can download the PDF version of the CV from the [Example folder](./Example/MyCV_Sample.pdf).
 
-
+## Overleaf Link
+You can view and make a copy of this project on overleaf at [MyCV-Overleaf](https://www.overleaf.com/read/vdsrzczzzbzn#dfc441).
 
