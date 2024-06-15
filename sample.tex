@@ -1,0 +1,398 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.7, 9 August 2023) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+% \usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+% \definecolor{SlateGrey}{HTML}{2E2E2E}
+% \definecolor{LightGrey}{HTML}{666666}
+% \definecolor{DarkPastelRed}{HTML}{450808}
+% \definecolor{PastelRed}{HTML}{8F0D0D}
+% % \definecolor{GoldenEarth}{HTML}{E7D192}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{RGB}{0,0,0}
+\definecolor{PastelRed}{RGB}{68,113,196}
+\definecolor{GoldenEarth}{RGB}{68,113,196}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+
+% If your CV/résumé is in a language other than English,
+% then you probably want to change these so that when you
+% copy-paste from the PDF or run pdftotext, the location
+% and date marker icons for \cvevent will paste as correct
+% translations. For example Spanish:
+% \renewcommand{\locationname}{Ubicación}
+% \renewcommand{\datename}{Fecha}
+
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear.tex}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+\input{pubs-num.tex}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{John Doe}
+\tagline{Curriculum Vitae}
+%% You can add multiple photos on the left or right
+\photoR{3.7cm}{Panda}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{Email, panda@pandacommunity.de}
+  \phone{Phone, +49 123 3456 7891}
+  % \linkedin{linkedin}
+  \mailaddress{Address, Panda, 38100 Germany}
+  \location{Location, Germany}
+  \homepage{www.homepage.com}
+  % \twitter{@twitterhandle}
+  \github{github}
+  % \orcid{0000-0000-0000-0000}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+\begin{minipage}[t]{\linewidth}
+\makecvheader
+\end{minipage}
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+% \columnratio{1}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+% \begin{paracol}{2}
+\cvsection{EDUCATIONAL BACKGROUND}
+\begin{tabular}{@{\,}r <{\hskip 2pt} !{\foo} >{\raggedright\arraybackslash}p{12cm}}
+\cvevent{MS Panda}{Panda University}{10.2022 -- Ongoing}{Panda, Germany}
+\textbf{Focus Areas:}
+\begin{itemize}
+\item Hibernation
+\end{itemize}
+\\
+\cvevent{B.E.~Panda}{University of Panda}{05.2018 -- 03.2022}{Panda, India}
+\textbf{Thesis title:} How to sleep comfortably.
+% \vspace{0.5cm}
+% \begin{itemize}
+% \item Job description 1
+% \item Job description 2
+% \end{itemize} 
+% \\
+% \cvevent{High School}{Maharashtra State Education Board }{06.2016 -- 03.2018}{Mumbai, India}
+% \textbf{Major:} Computer Science
+\vspace{0.2cm}
+\end{tabular}
+
+\cvsection{PROFESSIONAL EXPERIENCE}
+\begin{tabular}{@{\,}r <{\hskip 2pt} !{\foo} >{\raggedright\arraybackslash}p{14.3cm}}
+\cvevent{Research Panda}{Institut für Hibernation, }{06.2024 -- Present}{Panda, Germany}
+\begin{itemize}
+\item \textbf{Task 1:} Sleeping comfortably
+\item \textbf{Task 2:} How to not be angry
+\end{itemize} 
+
+\end{tabular}
+
+% If want to divide Perssional Experience between two pages
+
+\begin{tabular}{@{\,}r <{\hskip 2pt} !{\foo} >{\raggedright\arraybackslash}p{14.3cm}}
+\cvevent{Office Panda}{Panda Office, TU Panda}{05.2024 -- Present}{Panda, Germany}
+\begin{itemize}
+\item \textbf{Task 1:} Program Day und night.  
+\item \textbf{Task 2:} Work hard.
+\end{itemize} 
+\end{tabular}
+
+\begin{minipage}[t]{0.45\textwidth}
+\cvsection{Skills}
+\cvtag{Quick Learner}
+\cvtag{Adaptability}
+\cvtag{Sleeping}
+% \cvtag{Motivator \& Leader}
+% \cvtag{Cross-Cultural Communication}
+
+\divider\smallskip \\
+\textbf{Among Others:} \\
+\cvtag{Python}
+\cvtag{C++}
+
+\end{minipage}\hfill
+\begin{minipage}[t]{0.45\textwidth}
+
+\cvsection{Languages}
+
+\cvskill{Panda Language}{Mother Tongue}{}
+
+\divider 
+
+\cvskill{English}{C1}{4.5}%% Supports X.5 values.
+
+\end{minipage}
+
+%Publications and most proud of
+\begin{minipage}[t]{0.45\textwidth}
+\cvsection{Achievements}
+\cvachievement{\faTrophy}{Winner Rank 1}{Top Panda Sleeper held in Panda Kingdom, \\&Germany.}
+
+\divider
+
+\cvachievement{\faTrophy}{All Panda Rank 2}{Hibernation CHALLENGE 2022 held in Panda.}
+
+\end{minipage}\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\cvsection{Publications}
+
+%% Specify your last name(s) and first name(s) as given in the .bib to automatically bold your own name in the publications list.
+%% One caveat: You need to write \bibnamedelima where there's a space in your name for this to work properly; or write \bibnamedelimi if you use initials in the .bib
+%% You can specify multiple names, especially if you have changed your name or if you need to highlight multiple authors.
+\mynames{A./Panda\bibnamedelima Tze,
+  Wong/Lian\bibnamedelima Tze,
+  Lim/Tracy,
+  Lim/L.\bibnamedelimi T.}
+%% MAKE SURE THERE IS NO SPACE AFTER THE FINAL NAME IN YOUR \mynames LIST
+
+\nocite{*}
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+
+% \divider
+
+% \printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}},type=article]
+
+% \divider
+
+\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=misc]
+
+% \jobdescription{Summary
+% %
+% An Amazon internship will provide you with an unforgettable experience in an international environment; it will boost your resume and will provide a superb introduction to our company.
+% %
+% We are seeking motivated Business Analysis Interns to join our available roles in the following teams: Supply Chain, Network Planning, Inventory Placement, Transportation, Last Mile, Finance, Planning \& Analysis, or Finance \& Controlling.
+% %
+% Key job responsibilities
+% You will test your analytical and technical skills. This internship is a learning opportunity, where you will put your skills and bias for action to the test, to complete a project that will support your own growth in the Business Analysis function, as well as the team and our customers success. This could include:
+% • Learning how to partner across multiple teams and geographies
+% • Developing and executing complex data analyses, which will in turn drive the correct business decisions
+% • Helping identify process improvement opportunities to build streamlined and scalable solutions
+% • Partnering with the team to perform root cause analyses when facing problems
+% • Assisting in the development of business cases for new programs and services
+% • Participating in the development, delivery, maintenance and improvement of performance metrics dashboards
+% • Becoming part of a team of trusted advisors throughout an entire business unit
+% BASIC QUALIFICATIONS
+% We want to hire the most talented people and offer them an environment in which they can relentlessly improve our customer experience.
+% %
+% • You are currently working towards a 2+ years university degree in Business Analytics, Finance, Accounting, Economics, Statistics, Mathematics, Computer Science, Information Systems, Engineering, Supply Chain, Logistics or a similar discipline
+% • You have an advanced proficiency in Microsoft Excel (e.g. macros, pivots, lookups, VBA)
+% • You are proficient in SQL/ETL
+% • You are available to complete a full-time internship (4-6 months) and have the right to work in the country of employment
+% • You are fluent in both spoken and written English
+% %
+% PREFERRED QUALIFICATIONS
+% Preferred qualifications are not required to apply for a position at Amazon. If you have all the basic qualifications above, we’d love to hear from you.
+% %
+% • Analytical, detail-oriented and understanding of business
+% • Results driven, with the ability to innovate and simplify processes and practices.
+% • Any additional technical skills, such as coding (e.g. Python, R, Django), data visualization (e.g. Tableau, QlikView, PowerPivot, MicroStrategy) or operations research
+% • Familiar with Oracle and/or any AWS products (e.g. Redshift, EMR)
+% • Previous work experience – a summer job, internship; if it’s an experience in a related field or business, even better-
+% • Any additional related technical competence, would be considered as a plus.}
+\end{minipage}
+
+
+
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+\medskip
+
+% \cvsection{PROJECTS}
+% \begin{tabular}{@{\,}r <{\hskip 2pt} !{\foo} >{\raggedright\arraybackslash}p{5cm}}
+% \cvevent{Job Title 2}{Company 2}{Month 20XX -- Ongoing}{Location}
+% \begin{itemize}
+% \item Job description 1
+% \item Job description 2
+% \end{itemize}
+% \\
+% \cvevent{Job Title 1}{Company 1}{Month 20XX -- Ongoing}{Location}
+% \begin{itemize}
+% \item Job description 1
+% \item Job description 2
+% \end{itemize} 
+% \\
+% \cvevent{Job Title 2}{Company 2}{Month 20XX -- Ongoing}{Location}
+% \begin{itemize}
+% \item Job description 1
+% \item Job description 2
+% \end{itemize}
+% \end{tabular}
+% \cvsection{Projects}
+
+% \cveventmin{Project 1}{Funding agency/institution}{}{}
+% \begin{itemize}
+% \item Details
+% \end{itemize}
+
+% \divider
+
+% \cveventmin{Project 2}{Funding agency/institution}{Project duration}{}
+% A short abstract would also work.
+
+
+% \medskip
+
+% \cvsection{A Day of My Life}
+
+% % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% % \wheelchart{outer radius}{inner radius}{
+% % comma-separated list of value/text width/color/detail}
+% \wheelchart{1.5cm}{0.5cm}{%
+%   6/8em/accent!30/{Sleep,\\beautiful sleep},
+%   3/8em/accent!40/Hopeful novelist by night,
+%   8/8em/accent!60/Daytime job,
+%   2/10em/accent/Sports and relaxation,
+%   5/6em/accent!20/Spending time with family
+% }
+
+% % use ONLY \newpage if you want to force a page break for
+% % ONLY the current column
+% \newpage
+
+
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+% \switchcolumn
+
+% \cvsection{My Life Philosophy}
+
+% \begin{quote}
+% ``Something smart or heartfelt, preferably in one sentence.''
+% \end{quote}
+
+
+
+
+
+% \cvsection{Education}
+
+% \cvevent{Ph.D.\ in Your Discipline}{Your University}{Sept 2002 -- June 2006}{}
+% Thesis title: Wonderful Research
+
+% \divider
+
+% \cvevent{M.Sc.\ in Your Discipline}{Your University}{Sept 2001 -- June 2002}{}
+
+% \divider
+
+% \cvevent{B.Sc.\ in Your Discipline}{Stanford University}{Sept 1998 -- June 2001}{}
+
+% \divider
+
+% \cvsection{Referees}
+
+% % \cvref{name}{email}{mailing address}
+% \cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
+% {Address Line 1\\Address line 2}
+
+% \divider
+
+% \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
+% {Address Line 1\\Address line 2}
+\cvsection{INTERESTS \& HOBBIES}
+\cvtag{Swimming}
+\cvtag{Cycling}
+\cvtag{Hiking}
+\cvtag{Travelling}
+
+% \end{paracol}
+
+
+\end{document}
