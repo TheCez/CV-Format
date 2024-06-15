@@ -208,3 +208,14 @@ as well as doing a bit of arithmetic when you're making the header to get it ful
 \makecvheader
 \end{adjustwidth}
 ```
+## Example images:
+
+![Pandas's résumé Page 1](Example/MyCV_Sample_page-1.jpg)
+
+![Pandas's résumé Page 2](Example/MyCV_Sample_page-2.jpg)
+
+## Download PDF
+You can download the PDF version of the CV from the [Example folder](./Example/MyCV_Sample.pdf).
+
+
+
